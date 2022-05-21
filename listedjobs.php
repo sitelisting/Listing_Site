@@ -26,9 +26,8 @@ if(mysqli_num_rows($result) > 0){
                <th>Category</th>
                <th>Company Name</th>
                <th>Position</th>
-               <th>Job Link</th>
                <th>Job Contact</th>
-               <th>Job Descriptions</th>
+               <th>More Info and Apply</th>
            </tr>
          </thead>
          <tbody>
@@ -36,9 +35,8 @@ if(mysqli_num_rows($result) > 0){
                <th><?php echo $row['Job_Category'] ?></th>
                <th><?php echo $row['Company_Name'] ?></th>
                <th><?php echo $row['Job_Position'] ?></th>
-               <th><a  style='color:white;' href="#"><?php echo $row['Job_Link'] ?></a></th>
                <th><?php echo $row['Company_Number'].'<br>' .$row['Company_Email']?></th>
-               <th><?php echo $row['Job_Description']?>
+               <th><a  style='color:white;' href="<?php echo $row['Job_Link'] ?>">Click Here</a></th>
             </tr>
             
       </tbody>
