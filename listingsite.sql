@@ -49,8 +49,7 @@ CREATE TABLE `createjobs` (
   `Job_ID` int(11) NOT NULL,
   `Job_Category` varchar(255) NOT NULL,
   `Job_Position` varchar(255) NOT NULL,
-  `Job_Link` varchar(255) DEFAULT NULL,
-  `Job_Description` varchar(255) NOT NULL
+  `Job_Link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
