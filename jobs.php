@@ -11,11 +11,10 @@ if(isset($_POST['submit'])){
    $link= mysqli_real_escape_string($con, $_POST['link']);
    $company_email= mysqli_real_escape_string($con, $_POST['company_email']);
    $contact_number= mysqli_real_escape_string($con, $_POST['contact_number']);
-   $job_description= mysqli_real_escape_string($con, $_POST['job_description']);
   
    //sql syntax
-$sql="INSERT INTO createjobs (Job_Category, Company_Name, Job_Position, Job_Link, Company_Email, Company_Number, Job_Description)
-VALUES ('$job_category','$company_name','$position','$link','$company_email','$contact_number','$job_description')";
+$sql="INSERT INTO createjobs (Job_Category, Company_Name, Job_Position, Company_Email, Company_Number, Job_Link )
+VALUES ('$job_category','$company_name','$position','$company_email','$contact_number','$link')";
 
 $result= mysqli_query($con, $sql );
 
@@ -87,14 +86,6 @@ exit();
                   <label>Position</label>
                </div>
                <div class="group">
-                  <input type="text" name="link" required>
-                  <span class="highlight">
-                  </span>
-                  <span class="bar">
-                  </span>
-                  <label>Salary</label>
-               </div>
-               <div class="group">
                   <input type="email" name="company_email" required>
                   <span class="highlight">
                   </span>
@@ -111,12 +102,12 @@ exit();
                   <label>Contact Number</label>
                </div>
                <div class="group">
-                  <textarea type="text" col="8" row="20" name="job_description" required></textarea><br>
+                  <input type="text" name="link" required>
                   <span class="highlight">
                   </span>
                   <span class="bar">
                   </span>
-                  <label>Job Description</label>
+                  <label>Job Link</label>
                </div>
                <div>
                   <button id="btn-post" name="submit">Post Job</button>
