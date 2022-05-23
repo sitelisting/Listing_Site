@@ -39,6 +39,8 @@ include('session.php');
  
       </div>
       <footer id="footer">
+<?php include('counter.php')?>         
+
          <p>
          <h3>Useful links:</h3>
          </p>
