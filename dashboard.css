@@ -111,3 +111,52 @@ button:hover {
   button:hover:active {
     transform: scale(0.99);
   }
+  @media only screen and (max-width:700px){
+    .menu ul {
+       width:100%;
+       background-color: #999;
+       position: absolute;
+       z-index: 2;
+       top: 75px;
+       right:0;
+       display:block;
+       margin-top: 20px;
+     }
+     .menu ul li{
+        
+         margin-top: 9px;
+         margin-bottom: 10px;
+     }
+     .menu ul li a{
+      
+         color: #fff;
+        
+     }
+     .menu ul li a:hover{
+         
+        color: rgb(72, 0, 165);
+       
+    }
+    .menu-icon{
+        display: block;
+        float:right;
+        margin-top: 35px;
+        margin-right: 20px;
+        height: 50px;
+        width:50px;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .logo{
+        font-size: 35px;
+        padding-left: 0;
+    }
+    table{
+        width:50%;
+    }
+    th{
+        font-size: 11px;
+    }
+}
