@@ -139,12 +139,9 @@ if(isset($_POST['delete'])){
       </span>
       <footer id="footer">
          <p>
-         <h3>Useful links:</h3>
-         </p>
-         <a href="about.php"><b>About Us </b></a>
+       
          <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-         <a href="contact.php"> <b>Contact Us </b></a>
-         </p>
+        
          <p id="follow">Follow us !</p>
          <!-- social media links -->
          <div class="Sicon">
