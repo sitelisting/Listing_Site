@@ -48,7 +48,7 @@ echo "<script> alert('Job Posted successfully') </script>";
             <div class="menu">
                <img src="list.png" class="menu-icon" onclick="myMenu()">
                <ul id="menuList">
-               <li><a href="list.php">LIST</a></li>
+               <li><a href="listedjobs.php">LIST</a></li>
                <li><a href="user_homepage.php">HOME</a></li>
                <li><a href="about.php">ABOUT</a></li>
                   <li><a href="contact.php">CONTACT</a></li>
