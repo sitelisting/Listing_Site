@@ -84,5 +84,5 @@ session_start();
 
 <?php
 
-   mysqli_close($conn);
+   //mysqli_close($conn);
 ?>
