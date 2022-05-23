@@ -8,11 +8,23 @@
    <link rel="stylesheet" href="listedjobs.css">
 </head>
 <body>
-
+<div class="main">
+         <div class="navbar">
+            <img src="list.png" class="menu-icon" onclick="myMenu()">
+            <div class="icon">
+               <h1 class="logo">ListingSite</h1>
+            </div>
+            <div class="menu">
+               <ul id="menuList">
+                  <li><a href="homepage.php">HOME</a></li>  
+                 <li><a href="dashboard.php">DASHBOARD</a></li>
+                  <li><a href="adminProfile.php">PROFILE</a></li>
+               </ul>
+            </div>
+         </div>
 <?php
 
 include("connectdb.php");
-
 $sql="SELECT * FROM createjobs";
 
 $result= mysqli_query($conn, $sql );
