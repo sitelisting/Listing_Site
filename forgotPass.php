@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
 </html>
 <?php
 
-   mysqli_close($conn);
+  // mysqli_close($conn);
 ?>
 
 
