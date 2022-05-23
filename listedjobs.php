@@ -8,7 +8,24 @@
    <link rel="stylesheet" href="listedjobs.css">
 </head>
 <body>
-
+<body>
+      <div class="main">
+         <div class="navbar">
+            <img src="list.png" class="menu-icon" onclick="myMenu()">
+            <div class="icon">
+               <h1 class="logo">ListingSite</h1>
+            </div>
+            <div class="menu">
+               <ul id="menuList">
+                  <li><a href="user_homepage.php">HOME</a></li>
+                  <li><a href="about.php">ABOUT</a></li>
+                  <li><a href="contact.php">CONTACT</a></li>
+                  <li><a href="jobs.php">POST</a></li>
+                  <li><a href="profile.php">PROFILE</a></li>
+               
+               </ul>
+            </div>
+         </div>
 <?php
 
 include("connectdb.php");
