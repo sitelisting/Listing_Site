@@ -40,11 +40,7 @@ include('session.php');
       </div>
       <footer id="footer">
          <p>
-         <h3>Useful links:</h3>
-         </p>
-         <a href="jobs.php">Listed Jobs</a><br><br>
-         <a href="about.html">About Us</a>
-         <br>
+         
          <br>
          <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>        
          <p id="follow">Follow us !</p><br>
