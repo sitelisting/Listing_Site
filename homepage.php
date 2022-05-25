@@ -62,7 +62,7 @@ include('session.php');
          menuList.style.maxHeight= "0px";
          function myMenu(){
             if( menuList.style.maxHeight== "0px"){
-               menuList.style.maxHeight= "150px";
+               menuList.style.maxHeight= "200px";
             }
             else{
                menuList.style.maxHeight= "0px";
