@@ -35,7 +35,7 @@ include('session.php');
                   <li><a href="category1.php">ACCOUNTING & FINANCE</a></li>
                   <li><a href="category2.php">BUSINESS ANALIST</a></li>
                   <li><a href="category3.php">IT & ENGINEERING</a></li>
-                  <li><a href="category4.php">HUMAN RESSOURCES(HR)</a></li>
+                  <li><a href="category4.php">HUMAN RESOURCES(HR)</a></li>
                </ul>
             </div>
          </div>
