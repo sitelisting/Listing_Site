@@ -88,7 +88,6 @@ session_start();
       <script src="app.js"></script>
    </body>
 </html>
-
 <?php
 
    //mysqli_close($conn);

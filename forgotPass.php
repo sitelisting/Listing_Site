@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Log In</title>
+      <title>Forgot Password</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="login.css">
    </head>
