@@ -42,11 +42,7 @@ include('session.php');
 <?php include('counter.php')?>         
 
          <p>
-         <h3>Useful links:</h3>
-         </p>
-         <a href="jobs.php">Listed Jobs</a><br><br>
-         <a href="about.html">About Us</a>
-         <br>
+         
          <br>
          <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>        
          <p id="follow">Follow us !</p><br>
@@ -68,7 +64,7 @@ include('session.php');
          menuList.style.maxHeight= "0px";
          function myMenu(){
             if( menuList.style.maxHeight== "0px"){
-               menuList.style.maxHeight= "150px";
+               menuList.style.maxHeight= "200px";
             }
             else{
                menuList.style.maxHeight= "0px";

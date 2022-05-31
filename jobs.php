@@ -1,26 +1,29 @@
 <?php
 include('session.php');
+  include('connectdb.php');
 
 if(isset($_POST['submit'])){
  //connection with sql
- $con= mysqli_connect("localhost", "root", "", "listingsite");
-//getting employer inputs
-   $job_category= mysqli_real_escape_string($con, $_POST['job_category']);
-   $company_name= mysqli_real_escape_string($con, $_POST['company_name']);
-   $position= mysqli_real_escape_string($con, $_POST['position']);
-   $link= mysqli_real_escape_string($con, $_POST['link']);
-   $company_email= mysqli_real_escape_string($con, $_POST['company_email']);
-   $contact_number= mysqli_real_escape_string($con, $_POST['contact_number']);
-  
+//  $con= mysqli_connect("localhost", "root", "", "listingsite");
+// //getting employer inputs
+  $job_category= mysqli_real_escape_string($conn, $_POST['job_category']);
+  $company_name= mysqli_real_escape_string($conn, $_POST['company_name']);
+  $position= mysqli_real_escape_string($conn, $_POST['position']);
+  $link= mysqli_real_escape_string($conn, $_POST['link']);
+  $company_email= mysqli_real_escape_string($conn, $_POST['company_email']);
+  $contact_number= mysqli_real_escape_string($conn, $_POST['contact_number']);
+
    //sql syntax
 $sql="INSERT INTO createjobs (Job_Category, Company_Name, Job_Position, Company_Email, Company_Number, Job_Link )
 VALUES ('$job_category','$company_name','$position','$company_email','$contact_number','$link')";
 
-$result= mysqli_query($con, $sql );
+$result= mysqli_query($conn, $sql );
 
 //redirect web page using header function
-header('Location: jobs.php?Job posted successfully!');
-exit();
+// header('Location: jobs.php');
+// exit();
+echo "<script> alert('Job Posted successfully') </script>";
+
 } 
 
 
@@ -45,7 +48,7 @@ exit();
             <div class="menu">
                <img src="list.png" class="menu-icon" onclick="myMenu()">
                <ul id="menuList">
-               <li><a href="list.php">LIST</a></li>
+               <li><a href="listedjobs.php">LIST</a></li>
                <li><a href="user_homepage.php">HOME</a></li>
                <li><a href="about.php">ABOUT</a></li>
                   <li><a href="contact.php">CONTACT</a></li>
@@ -121,7 +124,7 @@ exit();
          <p>
          <h3>Useful links:</h3>
          </p>
-         <a href="jobs.php">Listed Jobs</a><br><br>
+         <a href="listedjobs.php">Listed Jobs</a><br><br>
          <a href="about.php">About Us</a>
          <br>
          <br>
