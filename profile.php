@@ -10,10 +10,34 @@ if(isset($_POST['update'])){
    $password = mysqli_real_escape_string($conn,$_POST['password']);
    $confirmPassword = mysqli_real_escape_string($conn,$_POST['cNfrmpassword']);
 
-   if($password === $confirmPassword){
+   if(isset($_POST['check'])){
+      if($password === $confirmPassword){
 
-      $sql = "UPDATE registerusers SET User_FullName ='$fullName' ,User_Email = '$email',User_Contact = '$contact',User_Password = '$password' WHERE User_Email ='{$_SESSION["name"]}'";
+         $hashedpassword = password_hash($password,PASSWORD_DEFAULT);
+   
+         $sql = "UPDATE registerusers SET User_FullName ='$fullName' ,User_Email = '$email',User_Contact = '$contact',User_Password = '$hashedpassword' WHERE User_Email ='{$_SESSION["name"]}'";
+         
+         $result = mysqli_query($conn,$sql);
+         if($result){
+            echo "<script> alert('Profile details updated successfully') </script>";
+            $_SESSION["name"] = $email;
+         }else{
+            echo "<script> alert('Profile couldn't be updated')</script>";
+            echo mysqli_connect_error();
+         }
       
+      
+      }
+   
+      else{
+         echo "<script> alert('Passwords do not match. please enter matching passwords');</script>";
+         echo mysqli_connect_error();
+      }
+
+   }
+   else{
+      $sql = "UPDATE registerusers SET User_FullName ='$fullName' ,User_Email = '$email',User_Contact = '$contact' WHERE User_Email ='{$_SESSION["name"]}'";
+         
       $result = mysqli_query($conn,$sql);
       if($result){
          echo "<script> alert('Profile details updated successfully') </script>";
@@ -22,13 +46,6 @@ if(isset($_POST['update'])){
          echo "<script> alert('Profile couldn't be updated')</script>";
          echo mysqli_connect_error();
       }
-   
-   
-   }
-
-   else{
-      echo "<script> alert('Passwords do not match. please enter matching passwords');</script>";
-      echo mysqli_connect_error();
    }
 }
 
@@ -138,6 +155,17 @@ if(isset($_POST['delete'])){
                      </span>
                      <label>Confirm Password</label>
                   </div>
+                  <div class="group">
+                  <br><input type="checkbox" name='check'>
+                     <span class="highlight">
+                     </span>
+                     <span class="bar">
+                     </span>
+                     <label>Check to update Password</label>
+                  </div>
+                 
+                  
+                  
                      <?php 
                      
                   }
@@ -160,7 +188,7 @@ if(isset($_POST['delete'])){
          <p>
          <h3>Useful links:</h3>
          </p>
-         <a href="about.php"><b>About Us </b></a>
+         <a href="about.php"><b>About Us </b></a><br>
          <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
          <a href="contact.php"> <b>Contact Us </b></a>
          </p>

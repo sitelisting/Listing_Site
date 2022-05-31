@@ -12,15 +12,22 @@ if(isset($_POST['submit'])){
       $email = mysqli_real_escape_string($conn,$_POST["email"]);
       $password = mysqli_real_escape_string($conn,$_POST["password"]);
 
-      $query = "SELECT User_Email,User_Password FROM registerusers WHERE User_Email = '$email' AND User_Password = '$password'";
+      $query = "SELECT * FROM registerusers WHERE User_Email = '$email'";
 
       $result = mysqli_query($conn,$query);
 
       if(mysqli_num_rows($result) > 0){
-         $_SESSION['name'] = $_POST['email'];
-         header('Location:user_homepage.php');
-         die;
-         // echo "You have Logged in";
+
+         $row = mysqli_fetch_array($result);
+         $hash = $row['User_Password'];
+
+         if(password_verify($password,$hash)){
+            $_SESSION['name'] = $_POST['email'];
+            header('Location:user_homepage.php');
+            die;
+            // echo "You have Logged in";
+         }
+
       }
 
       $email = mysqli_real_escape_string($conn,$_POST["email"]);
@@ -75,11 +82,3 @@ if(isset($_POST['submit'])){
       <script src="app.js"></script>
    </body>
 </html>
-
-
-
-
-
-
-    
-    

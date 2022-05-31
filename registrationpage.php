@@ -4,28 +4,35 @@ session_start();
 
    include('connectdb.php');
 
-   if(!empty($_POST['userName'] && !empty($_POST["uEmail"])) && !empty($_POST["contact"]) && !empty($_POST["pw2"])){
+   if(isset($_POST['register'])){
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $name = mysqli_real_escape_string($conn,$_POST["userName"]);
          $email = mysqli_real_escape_string($conn,$_POST["uEmail"]);
          $contact = mysqli_real_escape_string($conn,$_POST["contact"]);
-         $password = mysqli_real_escape_string($conn,$_POST["pw2"]);
-      }
-      
-   
-      $query = "INSERT INTO registerusers (User_Fullname,User_Email,User_Contact,User_Password)
-      VALUES ('$name','$email','$contact','$password')";
-   
-      if(!mysqli_query($conn,$query)){
-         echo "Error creating record <br>".mysqli_error($conn);
-      }
+         $password = mysqli_real_escape_string($conn,$_POST["pw"]);
+         $comfirmPassword = mysqli_real_escape_string($conn,$_POST["pw2"]);
 
-      else{
-         $_SESSION['name'] = $_POST['uEmail'];
-         header("Location:user_homepage.php");
-      }
+         if($password === $comfirmPassword){
 
+            $hashedpassword = password_hash($password,PASSWORD_DEFAULT);
+               
+            $query = "INSERT INTO registerusers (User_Fullname,User_Email,User_Contact,User_Password)
+            VALUES ('$name','$email','$contact','$hashedpassword')";
+         
+            if(!mysqli_query($conn,$query)){
+               echo "Error creating record <br>".mysqli_error($conn);
+            }
+
+            else{
+               $_SESSION['name'] = $_POST['uEmail'];
+               header("Location:user_homepage.php");
+            }
+         }
+         else{
+               echo "<script> alert('Passwords do not match. please enter matching passwords');</script>";
+        }
+      }
    }
 
 
@@ -72,7 +79,7 @@ session_start();
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Confirm Password</label>
-            <input type="submit" value="Register" id="registor">
+            <input name='register' type="submit" value="Register" id="registor">
             <!-- <button id="registor"type="button" name="log" onclick="jobseeker_registerFunc()">Register</button> -->
             <p class="pReg">Already have an account?<a class="pReg" href="login.php">Login here</a></p>
             <!--<p class="pReg">Are you an employer?<a class="pReg" href="employer_registrationpage.html">Register here</a></p>-->

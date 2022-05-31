@@ -11,7 +11,8 @@ if(isset($_POST['submit'])){
 
       if($password1 == $password){
 
-        $query = "UPDATE registerusers SET User_Password='$password' WHERE User_Email = '$email'";
+      $hashedpassword = password_hash($password,PASSWORD_DEFAULT);
+        $query = "UPDATE registerusers SET User_Password='$hashedpassword' WHERE User_Email = '$email'";
 
         $result = mysqli_query($conn,$query);
   
@@ -60,12 +61,3 @@ if(isset($_POST['submit'])){
       <script src="app.js"></script>
    </body>
 </html>
-
-
-
-
-
-
-
-    
-    

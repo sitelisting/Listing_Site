@@ -38,7 +38,6 @@ if(mysqli_num_rows($result) > 0){
                <th><?php echo $row['Company_Number'].'<br>' .$row['Company_Email']?></th>
                <th><a  style='color:white;' href="<?php echo $row['Job_Link'] ?>">Click Here</a></th>
             </tr>
-            
       </tbody>
       </table>
     
