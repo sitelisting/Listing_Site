@@ -32,10 +32,10 @@ include('session.php');
             <p>Find jobs listed on our site!</p>
             <div class="jobs">
                <ul>
-                  <li><a href="">ACCOUNTING & FINANCE</a></li>
-                  <li><a href="">BUSINESS ANALIST</a></li>
-                  <li><a href="">IT & ENGINEERING</a></li>
-                  <li><a href="">HUMAN RESSOURCES(HR)</a></li>
+                  <li><a href="category1.php">ACCOUNTING & FINANCE</a></li>
+                  <li><a href="category2.php">BUSINESS ANALIST</a></li>
+                  <li><a href="category3.php">IT & ENGINEERING</a></li>
+                  <li><a href="category4.php">HUMAN RESSOURCES(HR)</a></li>
                </ul>
             </div>
          </div>
@@ -52,6 +52,7 @@ include('session.php');
          <p id="follow">Follow us !</p><br>
          <!-- social media links -->
          <div class="Sicon">
+         
          <a class="social-icon"href="https://twitter.com/listingsite">
             <ion-icon name="logo-twitter"></ion-icon>
          </a>
@@ -60,6 +61,9 @@ include('session.php');
          </a>
          <a class="social-icon"href="https://facebook.com/ListingSite">
             <ion-icon name="logo-facebook"></ion-icon>
+         </a>
+         <a class="social-icon" href="https://github.com/sitelisting/Listing_Site">
+            <ion-icon name="logo-github"></ion-icon>
          </a>
          </div>
       </footer>
