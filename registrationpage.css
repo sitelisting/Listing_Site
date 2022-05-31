@@ -5,6 +5,8 @@
 body{
     background-color: rgb(185, 185, 185);
     background:linear-gradient(rgba(8, 3, 21, 0.527), rgba(5, 2, 23, 0.5)),url('B&W\ coffee.JPG');
+	 background-size: cover;
+    background-repeat: no-repeat;
 }
 .div1{
     width:350px;
