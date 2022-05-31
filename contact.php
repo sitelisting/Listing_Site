@@ -98,6 +98,9 @@ include('session.php');
             <ion-icon name="logo-facebook">
             </ion-icon>
          </a>
+         <a class="social-icon" href="https://github.com/sitelisting/Listing_Site">
+            <ion-icon name="logo-github"></ion-icon>
+         </a>
       </div>
       </footer>
       <script src="app.js"></script>
