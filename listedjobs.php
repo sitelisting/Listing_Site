@@ -29,7 +29,7 @@
 
 include("connectdb.php");
 
-$sql="SELECT * FROM createjobs";
+$sql="SELECT * FROM createjobs ORDER BY Job_Category ASC";
 
 $result= mysqli_query($conn, $sql );
 if(mysqli_num_rows($result) > 0){
