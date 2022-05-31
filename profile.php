@@ -172,10 +172,7 @@ if(isset($_POST['delete'])){
                }
                ?>
                <div>
-                  <button name='update' id="btn-update">Update</button>
-               </div>
-               <div>
-                  <button name='logout' id="btn-logout" onclick="logout()">Log Out</button>
+                  <button name='update' id="btn-update">Update</button><button name='logout' id="btn-logout" onclick="logout()">Log Out</button>
                </div>
                <div>
                   <button name='delete' id="btn-delete" onclick="logout()">Delete Account</button>
@@ -206,6 +203,9 @@ if(isset($_POST['delete'])){
          <a class="social-icon" href="https://facebook.com/ListingSite">
             <ion-icon name="logo-facebook">
             </ion-icon>
+         </a>
+         <a class="social-icon" href="https://github.com/sitelisting/Listing_Site">
+            <ion-icon name="logo-github"></ion-icon>
          </a>
       </div>
       </footer>
