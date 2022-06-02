@@ -35,15 +35,17 @@ include('session.php');
                   <li><a href="category1.php">ACCOUNTING & FINANCE</a></li>
                   <li><a href="category2.php">BUSINESS ANALIST</a></li>
                   <li><a href="category3.php">IT & ENGINEERING</a></li>
-                  <li><a href="category4.php">HUMAN RESOURCES(HR)</a></li>
+                  <li><a href="category4.php">HUMAN RESSOURCES(HR)</a></li>
                </ul>
             </div>
          </div>
       </div>
       <footer id="footer">
+      <div id="visits">...</div>
          <p>
          <h3>Useful links:</h3>
          </p>
+         
          <a href="jobs.php">Listed Jobs</a><br><br>
          <a href="about.php">About Us</a>
          <br>
@@ -78,6 +80,13 @@ include('session.php');
                menuList.style.maxHeight= "0px";
             }
          }
+         var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.countapi.xyz/hit/mysite.com/visits");
+xhr.responseType = "json";
+xhr.onload = function() {
+    document.getElementById('visits').innerText = this.response.value;
+}
+xhr.send();
       </script>
    </body>
 </html>
