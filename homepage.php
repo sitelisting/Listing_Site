@@ -27,6 +27,20 @@ include('session.php');
             <h1>WELCOME TO ListingSite</h1>
             <p>Are you graduated and you are looking for a job?</p>
             <p>Find jobs listed on our site!</p>
+            
+            <p>
+      
+               <?php
+                     include("connectdb.php");
+                     $query = "SELECT  COUNT(IP) as num FROM user_hits"; 
+                     $result=mysqli_query($conn,$query);
+                     $row = mysqli_fetch_array($result);
+                     
+               ?>
+               <p>Unique Visitors: <?php echo $row["num"] ?></p>
+
+            </p>
+
             <div class="jobs">
                <ul>
                   <li><a href="">ACCOUNTING & FINANCE</a></li>
@@ -38,9 +52,9 @@ include('session.php');
          </div>
  
       </div>
-      <footer id="footer">
-<?php include('counter.php')?>         
-
+      <footer id="footer">       
+         
+        
          <p>
          
          <br>

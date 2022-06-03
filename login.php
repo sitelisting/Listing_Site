@@ -2,7 +2,7 @@
 session_start();
 error_reporting (E_ALL ^ E_NOTICE); //To ignore all notice errors
 if(isset($_POST['submit'])){
-   
+   include("counter.php");
     include('connectdb.php');
 
    error_reporting (E_ALL ^ E_NOTICE); //To ignore all notice errors

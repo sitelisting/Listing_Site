@@ -30,6 +30,7 @@ include('session.php');
             <h1>WELCOME TO ListingSite</h1>
             <p>Are you graduated and you are looking for a job?</p>
             <p>Find jobs listed on our site!</p>
+            <p>Number of people who visited our site:<span id="visits"></span></p>
             <div class="jobs">
                <ul>
                   <li><a href="category1.php">ACCOUNTING & FINANCE</a></li>

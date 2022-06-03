@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2022 at 12:03 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Jun 03, 2022 at 05:19 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,22 +71,21 @@ CREATE TABLE `registerusers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_activity`
+-- Table structure for table `user_hits`
 --
 
-CREATE TABLE `user_activity` (
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `ip_address` varchar(255) NOT NULL,
-  `visit_date` varchar(255) NOT NULL
+CREATE TABLE `user_hits` (
+  `Id` int(11) NOT NULL,
+  `IP` varchar(20) NOT NULL,
+  `Date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_activity`
+-- Dumping data for table `user_hits`
 --
 
-INSERT INTO `user_activity` (`email`, `password`, `ip_address`, `visit_date`) VALUES
-('', '', '::1', '');
+INSERT INTO `user_hits` (`Id`, `IP`, `Date`) VALUES
+(1, '::1', '2022-06-03 15:18:09');
 
 --
 -- Indexes for dumped tables
@@ -109,6 +108,12 @@ ALTER TABLE `registerusers`
   ADD UNIQUE KEY `User_Contact` (`User_Contact`);
 
 --
+-- Indexes for table `user_hits`
+--
+ALTER TABLE `user_hits`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -117,6 +122,12 @@ ALTER TABLE `registerusers`
 --
 ALTER TABLE `createjobs`
   MODIFY `Job_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user_hits`
+--
+ALTER TABLE `user_hits`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
